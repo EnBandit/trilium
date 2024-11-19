@@ -1,6 +1,6 @@
 'use strict';
 
-const {app, globalShortcut, BrowserWindow} = require('electron');
+const { app, globalShortcut, BrowserWindow } = require('electron');
 const sqlInit = require('./src/services/sql_init.js');
 const appIconService = require('./src/services/app_icon.js');
 const windowService = require('./src/services/window.js');
@@ -26,7 +26,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', async () => {
-//    app.setAppUserModelId('com.github.zadam.trilium');
+    //    app.setAppUserModelId('com.github.zadam.trilium');
 
     // if db is not initialized -> setup process
     // if db is initialized, then we need to wait until the migration process is finished

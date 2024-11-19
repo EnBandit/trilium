@@ -30,7 +30,7 @@ function setPassword(req, res) {
         throw new ValidationError("Password has been already set");
     }
 
-    let {password1, password2} = req.body;
+    let { password1, password2 } = req.body;
     password1 = password1.trim();
     password2 = password2.trim();
 
@@ -74,7 +74,7 @@ function login(req, res) {
     }
     else {
         // note that logged IP address is usually meaningless since the traffic should come from a reverse proxy
-        log.info(`WARNING: Wrong password from ${req.ip}, rejecting.`);
+        log.info(`WARNING: Wrong password "${guessedPassword}" from ${req.ip}, rejecting.`);
 
         res.status(401).render('login', {
             failedAuth: true,
